@@ -1,5 +1,25 @@
 # kickstart.nvim
 
+## Preface
+This version of kickstart that I've personalised for my own work.
+
+Plugins installed are:
+- [csv-view](https://github.com/hat0uma/csvview.nvim) - used for viewing `.csv` files more easily. It puts white space between the "columns" so that everything is aligned.
+- [live-preview](https://github.com/brianhuster/live-preview.nvim) - this uses `.json` libraries to show previews of markdown files in a web browser. 
+- [multicursors]( https://github.com/smoka7/multicursors.nvim) - use this to edit on multiple lines at the same time.
+- [none-ls](https://github.com/nvimtools/none-ls.nvim) - I configured this to give warnings for Python.
+- [vim-doge](https://github.com/kkoomen/vim-doge) - I use this to generate doc strings for Python functions.
+
+Another customisation I made was to edit the `tokyonights` theme to have a transparent background. Since transparent backgrounds aren't always practical, I create a lua function to toggle the transparency of my background with the `:ToggleBG` command.
+
+After editing the `.lua` scripts for my chosen plugins, I copied them out of the `~/.config/nvim/` directory and cloned this fork. I then added my custom files back into the directory and pushed the changes to GitHub.
+
+> **Note:** In the instructions below, it states that `lazy-lock.json` should be removed from `.gitignore`, which I did.
+
+I use this fork of kickstart.nvim to save my nvim config.
+
+What follows is the original README.md from the kickstart.nvim. 
+
 ## Introduction
 
 A starting point for Neovim that is:

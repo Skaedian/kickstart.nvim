@@ -1,0 +1,11 @@
+{
+	"colour": "blue",
+	"height": 14.4,
+	"size": "large",
+	"names": [
+		"Jan", 
+		"Piet", 
+		"Wim"
+		],
+	"present": false
+}
