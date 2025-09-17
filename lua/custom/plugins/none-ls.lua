@@ -23,25 +23,12 @@ return {
           require 'none-ls.formatting.ruff_format',
           null_ls.builtins.formatting.prettier.with { filetypes = {'json', 'yaml', 'markdown' } },
           null_ls.builtins.formatting.shfmt.with { args = { '-i', '4' } }, -- Format shell scripts with 4 spaces for indentation
+          require('none-ls.diagnostics.ruff'),  -- This gives syntax errors and warnings for python
         }
-        -- AUTO-FORMAT FILE UPON SAVE:
-        local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
         null_ls.setup {
           -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
           sources = sources,
-          -- you can reuse a shared lspconfig on_attach callback here
-          on_attach = function(client, bufnr)
-            if client.supports_method 'textDocument/formatting' then
-              vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-              vim.api.nvim_create_autocmd('BufWritePre', {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                  vim.lsp.buf.format { async = false }
-                end,
-              })
-            end
-          end,
+          -- Previously, this space had config to auto format file upon save (now removed)
         }
       end,
     }
