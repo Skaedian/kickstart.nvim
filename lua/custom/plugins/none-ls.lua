@@ -1,5 +1,7 @@
-return {
+-- NOTE: I had to run `MasonInstall python-lsp-server` for the below to work.
 
+return
+{
   {
     'nvimtools/none-ls.nvim',
       dependencies = {
@@ -23,9 +25,7 @@ return {
           require 'none-ls.formatting.ruff_format',
           null_ls.builtins.formatting.prettier.with { filetypes = {'json', 'yaml', 'markdown' } },
           null_ls.builtins.formatting.shfmt.with { args = { '-i', '4' } }, -- Format shell scripts with 4 spaces for indentation
-          require('none-ls.diagnostics.ruff').with {
-	 	extra_args = { '--select', 'E302,W391,E,W,F' },
-	  },  -- This gives syntax errors and warnings for python
+          require('none-ls.diagnostics.ruff'),  -- This gives syntax errors and warnings for python
         }
         null_ls.setup {
           -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
@@ -33,20 +33,6 @@ return {
           -- Previously, this space had config to auto format file upon save (now removed)
         }
       end,
-    },
-  {
-    'neovim/nvim-lspconfig', -- Optional: for pylsp setup
-      config = function()
-        require('lspconfig').pylsp.setup {
-          settings = {
-            pylsp = {
-              plugins = {
-                pycodestyle = { enabled = false }, -- Disable to avoid overlap with Ruff
-                pyflakes = { enabled = false },
-                         },
-                     },
-                      },
-                                         }
-      end,
     }
 }
+
