@@ -7,8 +7,10 @@ Plugins installed are:
 - [csv-view](https://github.com/hat0uma/csvview.nvim) - used for viewing `.csv` files more easily. It puts white space between the "columns" so that everything is aligned.
 - [live-preview](https://github.com/brianhuster/live-preview.nvim) - this uses `.json` libraries to show previews of markdown files in a web browser. 
 - [multicursors]( https://github.com/smoka7/multicursors.nvim) - use this to edit on multiple lines at the same time.
-- [none-ls](https://github.com/nvimtools/none-ls.nvim) - I configured this to give warnings for Python.
-- [vim-doge](https://github.com/kkoomen/vim-doge) - I use this to generate doc strings for Python functions.
+- [vim-doge](https://github.com/kkoomen/vim-doge) - I use this to generate doc strings for Python functions. After cloning this repo to Neovim, remember to run `:call doge#install()`!
+- [ruff](https://docs.astral.sh/ruff/editors/settings/) - Python linting
+- [pyright](https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file) - Python LSP
+- [yamlls](https://github.com/redhat-developer/yaml-language-server) - YAML LSP
 
 Another customisation I made was to edit the `tokyonights` theme to have a transparent background. Since transparent backgrounds aren't always practical, I create a lua function to toggle the transparency of my background with the `:ToggleBG` command.
 
