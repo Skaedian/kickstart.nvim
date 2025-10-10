@@ -640,19 +640,20 @@ require('lazy').setup({
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        -- virtual_text = {
+        --   source = 'if_many',
+        --   spacing = 2,
+        --   format = function(diagnostic)
+        --     local diagnostic_message = {
+        --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        --       [vim.diagnostic.severity.WARN] = diagnostic.message,
+        --       [vim.diagnostic.severity.INFO] = diagnostic.message,
+        --       [vim.diagnostic.severity.HINT] = diagnostic.message,
+        --     }
+        --     return diagnostic_message[diagnostic.severity]
+        --   end,
+        -- },
+        virtual_lines = true,
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
@@ -683,22 +684,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        pylsp = {
-          settings = {
-            pylsp = {
-              plugins = {
-                pyflakes = { enabled = false },
-                pycodestyle = { enabled = false },
-                autopep8 = { enabled = false },
-                yapf = { enabled = false },
-                mccabe = { enabled = false },
-                pylsp_mypy = { enabled = false },
-                pylsp_black = { enabled = false },
-                pylsp_isort = { enabled = false },
-              },
-            },
-          },
-        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -732,6 +717,9 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'ruff', -- Python linter and formatter, see ruff.lua for config.
+        'pyright', -- Python language server, see pyright.lua for config.
+        'yaml-language-server', -- YAML language server, see yamlls.lua for config.
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -902,7 +890,7 @@ require('lazy').setup({
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
-       transparent = true,  -- Enable transparent background 
+        transparent = true,
         styles = {
           comments = { italic = false }, -- Disable italics in comments
           sidebars = 'transparent',
@@ -914,12 +902,12 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
-     -- 
-     -- Custom function to toggle background transparency
+
+      -- Custom function to toggle background transparency
      _G.bg_transparent = true
      _G.toggle_transparency = function()
         _G.bg_transparent = not bg_transparent
-      ---@diagnostic disable-next-line: missing-fields
+        ---@diagnostic disable-next-line: missing-fields
         require('tokyonight').setup {
           transparent = _G.bg_transparent,
           styles = {

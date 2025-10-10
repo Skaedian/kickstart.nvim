@@ -1,3 +1,4 @@
+-- This plugin is used to view Markdown files in a browser tab.
 return {
 
 {
@@ -7,7 +8,7 @@ return {
         'nvim-telescope/telescope.nvim',
         -- 'ibhagwan/fzf-lua',
         -- 'echasnovski/mini.pick',
-	-- 'folke/snacks.nvim',
+        -- 'folke/snacks.nvim',
     },
 }
 

@@ -1,10 +1,10 @@
-Title Of Document
+# Title Of Document
 -----
 
 This will show various markdown formats so that I can test Live-Preview
 
 # Heading
-This is a heading. 
+This is a heading.
 
 Here is some python code:
 
@@ -45,3 +45,5 @@ Here is a link to an image:
 Click [here](https://github.com/brianhuster/live-preview.nvim) to go to Live-Preview's git page.
 
 Some new text here!
+
+

@@ -1,0 +1,13 @@
+apiVersion: v1
+metadata:
+  
+kind: ConfigMap
+spec:
+  env:
+    some_var:
+      - name: "huh"
+        height: 1.76
+        age: 37
+      - name: "uh"
+        height: 1.92
+        age: 15

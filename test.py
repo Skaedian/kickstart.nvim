@@ -1,16 +1,29 @@
-from pprint import pprint
-
 import requests
+from pprint import pprint
+import tvdbapig
 
+def second_func():
+    the_var: int = 3.2
+    tvdb("huh")
+    return type(the_var)
 
-def my_func():
+# Some, super long, comment to test if the line length is detected or not, since I think the default is eighty-eight characters
+def my_func(huh=0):
     """
-    This is a test docstring!
+    [TODO:description]
+
+    :param huh: [TODO:description], defaults to 0
+    :type huh: [TODO:type], optional
     """
-    response = requests.get("https://www.google.com")
+    # huh
+    url = "https://www.google.com"
+    response = requests.get(url).status_code
     return response
 
 
 if __name__ == "__main__":
-    pprint("Hallo World!")
-    my_func()
+    print(my_func())
+    print(second_func())
+    print(tvdbapig.some_func)
+
+
