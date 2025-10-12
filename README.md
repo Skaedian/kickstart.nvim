@@ -11,6 +11,7 @@ Plugins installed are:
 - [ruff](https://docs.astral.sh/ruff/editors/settings/) - Python linting
 - [pyright](https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file) - Python LSP
 - [yamlls](https://github.com/redhat-developer/yaml-language-server) - YAML LSP
+- [Copilot Chat](https://github.com/CopilotC-Nvim/CopilotChat.nvim) - GitHub Copilo plugin. To start, use `:Copilot auth` once all plugins are installed.
 
 Another customisation I made was to edit the `tokyonights` theme to have a transparent background. Since transparent backgrounds aren't always practical, I create a lua function to toggle the transparency of my background with the `:ToggleBG` command.
 
