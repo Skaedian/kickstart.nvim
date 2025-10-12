@@ -22,6 +22,11 @@ return {
       { "<leader>zo", ":CopilotChatOptimize<CR>", mode = "v", desc = "Optimize Code"},
       { "<leader>zm", ":CopilotChatModels<CR>", mode = "v", desc = "Choose Different Copilot Model"},
       { "<leader>zm", ":CopilotChatModels<CR>", mode = "n", desc = "Choose Different Copilot Model"},
+      { "<leader>zx", ":CopilotChatClose<CR>", mode = "n", desc = "Close Copilot Chat (x = exit)"},
+      { "<leader>zx", ":CopilotChatClose<CR>", mode = "v", desc = "Close Copilot Chat (x = exit)"},
+      { "<leader>zx", ":CopilotChatClose<CR>", mode = "i", desc = "Close Copilot Chat (x = exit)"},
+
+
     }
   },
 }
