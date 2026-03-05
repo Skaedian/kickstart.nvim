@@ -3,6 +3,8 @@
 ## Preface
 This version of kickstart that I've personalised for my own work.
 
+> **Important:** When cloning this repo, remember to first ensure that `nodejs` and `npm` are installed for plugins to function properly.
+
 Plugins installed are:
 - [csv-view](https://github.com/hat0uma/csvview.nvim) - used for viewing `.csv` files more easily. It puts white space between the "columns" so that everything is aligned.
 - [live-preview](https://github.com/brianhuster/live-preview.nvim) - this uses `.json` libraries to show previews of markdown files in a web browser. 
