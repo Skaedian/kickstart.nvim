@@ -48,6 +48,13 @@ If you are experiencing issues, please make sure you have the latest versions.
 
 External Requirements:
 - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
+- [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
+  (`tree-sitter`): required by the `main` branch of nvim-treesitter to compile parsers,
+  which also powers highlighting and code folding (`zM` / `zR`)
+  - macOS: `brew install tree-sitter-cli`
+  - Arch/CachyOS: `sudo pacman -S tree-sitter-cli`
+  - Other: `npm install -g tree-sitter-cli` or `cargo install tree-sitter-cli`
+- Neovim 0.11 or newer
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
   [fd-find](https://github.com/sharkdp/fd#installation)
 - Clipboard tool (xclip/xsel/win32yank or other depending on the platform)
@@ -260,7 +267,7 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 <details><summary>Arch Install Steps</summary>
 
 ```
-sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
+sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim tree-sitter-cli
 ```
 </details>
 
